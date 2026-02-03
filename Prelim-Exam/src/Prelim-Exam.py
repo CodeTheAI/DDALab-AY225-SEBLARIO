@@ -8,7 +8,6 @@ import threading
 
 
 class SortingBenchmark:
-    """Main application class for the sorting benchmark tool."""
     
     def __init__(self, root):
         self.root = root
