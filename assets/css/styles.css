@@ -1,0 +1,134 @@
+:root {
+    --uphsd-maroon: #800000;
+    --uphsd-gold: #FFD700;
+    --caution-black: #222;
+    --text-dark: #333;
+    --white: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: var(--white);
+    margin: 20px;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-top: 10px solid var(--uphsd-maroon);
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+}
+
+.banner-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+/* --- CONSTRUCTION ANIMATIONS --- */
+
+.construction-container {
+    margin-bottom: 2rem;
+}
+
+.gear-box {
+    position: relative;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.gear-large {
+    font-size: 40px;
+    color: var(--uphsd-maroon);
+    animation: rotate 4s linear infinite;
+}
+
+.gear-small {
+    font-size: 25px;
+    color: var(--uphsd-gold);
+    position: absolute;
+    top: 25px;
+    margin-left: -5px;
+    animation: rotate-rev 3s linear infinite;
+}
+
+.status-badge-animated {
+    display: inline-block;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--uphsd-gold),
+        var(--uphsd-gold) 10px,
+        var(--caution-black) 10px,
+        var(--caution-black) 20px
+    );
+    padding: 3px; /* The "border" of the caution tape */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.status-badge-animated span {
+    display: block;
+    background: var(--uphsd-maroon);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    animation: text-glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-rev {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes text-glow {
+    from { text-shadow: 0 0 5px #fff, 0 0 10px var(--uphsd-gold); }
+    to { text-shadow: 0 0 20px var(--uphsd-gold), 0 0 30px var(--uphsd-gold); }
+}
+
+/* --- REST OF STYLES --- */
+
+h1 { color: var(--uphsd-maroon); margin-top: 0; }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.info-item {
+    background: #fff8f8;
+    padding: 15px;
+    border-left: 5px solid var(--uphsd-gold);
+    border-radius: 5px;
+}
+
+.footer {
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+@media (max-width: 600px) {
+    .info-grid { grid-template-columns: 1fr; }
+}

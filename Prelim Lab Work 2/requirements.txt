@@ -1,8 +1,0 @@
-# Dependencies for Modern Sorting Application
-# Install with: pip install -r requirements.txt
-
-# For Excel file support (.xlsx files)
-openpyxl>=3.0.0
-
-# For legacy Excel file support (.xls files)
-xlrd>=2.0.0
